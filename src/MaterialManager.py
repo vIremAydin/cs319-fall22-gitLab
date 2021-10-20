@@ -7,22 +7,28 @@ class MaterialManager:
         self.params = params
         # other configurations
 
-    def changeMaterial(self, material) -> bool:
-        returnText = ""
 
-        match material:
-            case materialType.Titanium:
-                self.carManager.setMaterial(materialType.Titanium)
-                returnText = "Material is changed to Titanium."
+def changeMaterial(self, material) -> bool:
+    returnText = ""
 
-            case materialType.Carbon:
-                self.carManager.setMaterial(materialType.Carbon)
-                returnText = "Material is changed to Carbon."
+    match material:
+    case materialType.Titanium:
+    self.carManager.setMaterial(materialType.Titanium)
+    returnText = "Material is changed to Titanium."
 
-            case _:
-                returnText = "Material seletion is invalid."
+case materialType.Carbon:
+self.carManager.setMaterial(materialType.Carbon)
+returnText = "Material is changed to Carbon."
 
-        return self._announceMaterial(returnText)
+case materialType.AlloyX:
+self.carManager.setMaterial(materialType.AlloyX)
+returnText = "Material is changed to AlloyX."
+
+case _:
+returnText = "Material selection is invalid."
+
+return self._announceMaterial(returnText)
+
 
 def _announceMaterial(self, text: str) -> bool:
     returnValue = False
