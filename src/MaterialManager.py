@@ -11,18 +11,22 @@ class MaterialManager:
         returnText = ""
 
         match material:
-            case materialType.Titanium:
-                self.carManager.setMaterial(materialType.Titanium)
-                returnText = "Material is changed to Titanium."
+        case materialType.Titanium:
+        self.carManager.setMaterial(materialType.Titanium)
+        returnText = "Material is changed to Titanium."
 
-            case materialType.Carbon:
-                self.carManager.setMaterial(materialType.Carbon)
-                returnText = "Material is changed to Carbon."
+    case materialType.Carbon:
+    self.carManager.setMaterial(materialType.Carbon)
+    returnText = "Material is changed to Carbon."
 
-            case _:
-                returnText = "Material seletion is invalid."
+case materialType.Vibranium:
+self.carManager.setMaterial(materialType.Vibranium)
+returnText = "Material is changed to Vibranium."
 
-        return self._announceMaterial(returnText)
+case _:
+returnText = "Material selection is invalid."
+
+return self._announceMaterial(returnText)
 
 def _announceMaterial(self, text: str) -> bool:
     returnValue = False
